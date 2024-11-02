@@ -15,47 +15,44 @@
             margin-bottom: 20px;
             color: #333;
         }
-        .link-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            width: 80%;
-            max-width: 600px;
-        }
-        .link-cube {
+        .dropdown-container {
+            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 20px;
+            margin: 10px 0;
+        }
+        .dropdown {
+            width: 300px;
+            padding: 10px;
+            font-size: 1em;
             border: 2px solid #333;
-            border-radius: 10px;
-            background-color: #f2f2f2;
-            text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .link-cube:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.05);
-        }
-        .link-cube a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Daftar Member JKT48 - Aktif 2024</h1>
-    <div class="link-container">
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen3.html" target="_blank">Generasi 3</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen6.html" target="_blank">Generasi 6</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen7.html" target="_blank">Generasi 7</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen8.html" target="_blank">Generasi 8</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen9.html" target="_blank">Generasi 9</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen10.html" target="_blank">Generasi 10</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen11.html" target="_blank">Generasi 11</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen12.html" target="_blank">Generasi 12</a></div>
+
+    <div class="dropdown-container">
+        <select class="dropdown" onchange="window.location.href=this.value;">
+            <option value="#">Pilih Generasi</option>
+            <option value="https://beritajkt48.github.io/member/gen3.html">Generasi 3</option>
+            <option value="https://beritajkt48.github.io/member/gen6.html">Generasi 6</option>
+            <option value="https://beritajkt48.github.io/member/gen7.html">Generasi 7</option>
+            <option value="https://beritajkt48.github.io/member/gen8.html">Generasi 8</option>
+        </select>
     </div>
+
+    <div class="dropdown-container">
+        <select class="dropdown" onchange="window.location.href=this.value;">
+            <option value="#">Pilih Generasi</option>
+            <option value="https://beritajkt48.github.io/member/gen9.html">Generasi 9</option>
+            <option value="https://beritajkt48.github.io/member/gen10.html">Generasi 10</option>
+            <option value="https://beritajkt48.github.io/member/gen11.html">Generasi 11</option>
+            <option value="https://beritajkt48.github.io/member/gen12.html">Generasi 12</option>
+        </select>
+    </div>
+
 </body>
 </html>
