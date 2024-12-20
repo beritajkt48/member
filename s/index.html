@@ -32,7 +32,8 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 600px;
+            width: 100%;
+            max-width: 600px; /* Maksimal lebar 600px */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -43,13 +44,15 @@
             width: 150px;
             height: auto;
             border-radius: 8px;
-            margin-right: 20px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cube-content {
             text-align: left;
             flex: 1;
-            margin-bottom: 20px;
         }
 
         .cube-content h2 {
@@ -78,7 +81,7 @@
         .countdown {
             font-weight: bold;
             color: #2c3e50;
-            font-size: 1.2rem;  /* Ukuran font lebih kecil */
+            font-size: 1.2rem;
             margin-top: 10px;
             line-height: 1.5;
         }
@@ -101,6 +104,56 @@
 
         .choose-generation a:hover {
             background-color: #555;
+        }
+
+        /* Media Query untuk perangkat kecil (ponsel) */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .cube {
+                width: 100%;
+                max-width: none;
+                padding: 10px;
+            }
+
+            .cube img {
+                width: 120px;
+                margin-bottom: 10px;
+            }
+
+            .cube-content h2 {
+                font-size: 18px;
+            }
+
+            .cube-content p {
+                font-size: 14px;
+            }
+
+            .countdown {
+                font-size: 1rem;
+            }
+
+            .choose-generation a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+
+        /* Media Query untuk perangkat lebih besar (tablet dan laptop) */
+        @media screen and (max-width: 1024px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .cube img {
+                width: 140px;
+            }
+
+            .countdown {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
