@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f1f1f1;
             margin: 0;
             padding: 20px;
         }
@@ -16,7 +16,7 @@
         h1 {
             text-align: center;
             margin-bottom: 40px;
-            font-size: 24px;
+            font-size: 28px;
             color: #333;
         }
 
@@ -30,29 +30,32 @@
         .cube {
             background-color: #ffffff;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
             display: flex;
-            align-items: flex-start;
+            flex-direction: row;
+            align-items: center;
             padding: 20px;
         }
 
         .cube img {
-            width: 150px;
-            height: auto;
-            border-radius: 8px;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
             margin-right: 20px;
         }
 
         .cube-content {
-            text-align: left;
             flex: 1;
+            text-align: left;
         }
 
         .cube-content h2 {
             margin: 0 0 10px;
-            font-size: 20px;
+            font-size: 22px;
             color: #333;
         }
 
@@ -68,9 +71,21 @@
             font-size: 16px;
             color: #fff;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
+            background-color: #e74c3c; /* Merah cerah */
+            padding: 12px;
             border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .countdown {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.4rem;
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 20px;
         }
 
         .choose-generation {
@@ -80,7 +95,7 @@
 
         .choose-generation a {
             display: inline-block;
-            background-color: #333;
+            background-color: #3498db; /* Biru terang */
             color: #fff;
             padding: 15px 30px;
             font-size: 18px;
@@ -90,13 +105,68 @@
         }
 
         .choose-generation a:hover {
-            background-color: #555;
+            background-color: #2980b9;
+        }
+
+        /* Media Query untuk perangkat kecil (ponsel) */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .cube {
+                width: 100%;
+                max-width: none;
+                padding: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cube img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 20px;
+            }
+
+            .cube-content h2 {
+                font-size: 18px;
+            }
+
+            .cube-content p {
+                font-size: 14px;
+            }
+
+            .countdown {
+                font-size: 1.2rem;
+            }
+
+            .choose-generation a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+
+        /* Media Query untuk perangkat lebih besar (tablet dan laptop) */
+        @media screen and (max-width: 1024px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .cube img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .countdown {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>Daftar Member dalam Masa Hukuman - JKT48</h1>
+
     <div class="container">
         <div class="cube">
             <img src="flora.jpg" alt="Foto Flora Shafiq">
@@ -107,37 +177,14 @@
                 <p><strong>Horoskop:</strong> Aries</p>
                 <p><strong>Tinggi Badan:</strong> 149cm</p>
                 <p><strong>Nama Panggilan:</strong> Flora</p>
-                <p class="punishment">Masa Hukuman: untuk waktu yang tidak ditentukan hingga pemberitahuan lebih lanjut</p>
-                <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hitungan Mundur</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .countdown {
-            text-align: center;
-            font-size: 2rem;
-        }
-        .time {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-    </style>
-</head>
-<body>
-    <div class="countdown">
-        <p>Waktu Tersisa:</p>
-        <div id="timer" class="time">00:00:00:00</div>
+                <p class="punishment">Masa Hukuman: Masa penangguhannya sebagai member JKT48 akan berakhir di tanggal 10 Februari 2025</p>
+                <div class="countdown" id="timer">00:00:00:00</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-generation">
+        <a href="https://beritajkt48.github.io/info/">Menu Utama</a>
     </div>
 
     <script>
@@ -152,7 +199,7 @@
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-                document.getElementById("timer").textContent = `${days} : ${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+                document.getElementById("timer").textContent = `${days} Hari : ${hours.toString().padStart(2, '0')} Jam : ${minutes.toString().padStart(2, '0')} Menit : ${seconds.toString().padStart(2, '0')} Detik`;
             } else {
                 document.getElementById("timer").textContent = "Waktu telah habis!";
             }
@@ -161,14 +208,6 @@
         setInterval(countdown, 1000);
         countdown();
     </script>
-</body>
-</html>
-            </div>
-        </div>
-    </div>
-    <div class="choose-generation">
-        <a href="https://beritajkt48.github.io/info/">Menu Utama</a>
-    </div>
 </body>
 
 </html>
