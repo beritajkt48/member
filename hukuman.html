@@ -108,18 +108,61 @@
                 <p><strong>Tinggi Badan:</strong> 149cm</p>
                 <p><strong>Nama Panggilan:</strong> Flora</p>
                 <p class="punishment">Masa Hukuman: untuk waktu yang tidak ditentukan hingga pemberitahuan lebih lanjut</p>
-            </div>
-        </div>
-        <div class="cube">
-            <img src="callie.jpg" alt="Foto Callista Alifia">
-            <div class="cube-content">
-                <h2>Callista Alifia</h2>
-                <p><strong>Tanggal Lahir:</strong> 8 Agustus 2005</p>
-                <p><strong>Golongan Darah:</strong> O</p>
-                <p><strong>Horoskop:</strong> Leo</p>
-                <p><strong>Tinggi Badan:</strong> 157cm</p>
-                <p><strong>Nama Panggilan:</strong> Callie</p>
-                <p class="punishment">Masa Hukuman: untuk waktu yang tidak ditentukan hingga pemberitahuan lebih lanjut</p>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitungan Mundur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .countdown {
+            text-align: center;
+            font-size: 2rem;
+        }
+        .time {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <p>Waktu Tersisa:</p>
+        <div id="timer" class="time">00:00:00:00</div>
+    </div>
+
+    <script>
+        function countdown() {
+            const targetDate = new Date("2025-02-10T23:59:00+07:00");
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").textContent = `${days} : ${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+            } else {
+                document.getElementById("timer").textContent = "Waktu telah habis!";
+            }
+        }
+
+        setInterval(countdown, 1000);
+        countdown();
+    </script>
+</body>
+</html>
             </div>
         </div>
     </div>
