@@ -34,6 +34,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 600px;
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
             padding: 20px;
         }
@@ -48,6 +49,7 @@
         .cube-content {
             text-align: left;
             flex: 1;
+            margin-bottom: 20px;
         }
 
         .cube-content h2 {
@@ -73,16 +75,11 @@
             border-radius: 8px;
         }
 
-        .countdown-wrapper {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 1.5rem;
-        }
-
         .countdown {
             font-weight: bold;
             color: #2c3e50;
             font-size: 2rem;
+            margin-top: 10px;
         }
 
         .choose-generation {
@@ -121,13 +118,9 @@
                 <p><strong>Tinggi Badan:</strong> 149cm</p>
                 <p><strong>Nama Panggilan:</strong> Flora</p>
                 <p class="punishment">Masa Hukuman: untuk waktu yang tidak ditentukan hingga pemberitahuan lebih lanjut</p>
+                <div id="timer" class="countdown">00:00:00:00</div>
             </div>
         </div>
-    </div>
-
-    <div class="countdown-wrapper">
-        <p>Waktu Tersisa sebelum pemberitahuan lebih lanjut:</p>
-        <div id="timer" class="countdown">00:00:00:00</div>
     </div>
 
     <div class="choose-generation">
