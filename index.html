@@ -4,53 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Member JKT48 - Aktif 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Background gradasi bergerak */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0;
             padding: 0;
-            background-color: #fafafa;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #000000, #0a1f44, #001f3f);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
         }
+
         h1 {
-            margin: 20px 0;
-            color: #333;
-            font-size: 1.8em;
+            margin: 30px 0;
+            font-size: 2em;
             text-align: center;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
+
         .link-container {
             display: grid;
-            gap: 10px;
+            gap: 15px;
             width: 90%;
             max-width: 600px;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         }
+
         .link-cube {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 15px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            background-color: #f2f2f2;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
             text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .link-cube:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.05);
-        }
-        .link-cube a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
         }
 
-        /* Media query for smaller screens */
+        .link-cube:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .link-cube a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .link-cube:hover a {
+            color: #ffcc00;
+        }
+
+        /* Tombol Halaman Utama */
+        .btn-home {
+            margin-top: 30px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: white;
+            color: #001f3f;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Media Queries */
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
@@ -61,14 +105,13 @@
             }
         }
 
-        /* Media query for larger screens */
         @media (min-width: 1024px) {
             .link-container {
-                gap: 15px;
+                gap: 20px;
                 grid-template-columns: repeat(4, 1fr);
             }
             .link-cube {
-                padding: 20px;
+                padding: 18px;
                 font-size: 1.1em;
             }
         }
@@ -77,20 +120,16 @@
 <body>
     <h1>Daftar Member JKT48 - Aktif 2024</h1>
     <div class="link-container">
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen3.html" target="_blank">Generasi 3</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen6.html" target="_blank">Generasi 6</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen7.html" target="_blank">Generasi 7</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen8.html" target="_blank">Generasi 8</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen9.html" target="_blank">Generasi 9</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen10.html" target="_blank">Generasi 10</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen11.html" target="_blank">Generasi 11</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen12.html" target="_blank">Generasi 12</a></div>
-        <div class="link-cube"><a href="https://beritajkt48.github.io/member/gen13.html" target="_blank">Generasi 13</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/3/" target="_blank">Generasi 3</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/6/" target="_blank">Generasi 6</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/7/" target="_blank">Generasi 7</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/8/" target="_blank">Generasi 8</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/9/" target="_blank">Generasi 9</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/10/" target="_blank">Generasi 10</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/11/" target="_blank">Generasi 11</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/12/" target="_blank">Generasi 12</a></div>
+        <div class="link-cube"><a href="https://beritajkt48.github.io/member/13/" target="_blank">Generasi 13</a></div>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://beritajkt48.github.io/info/" style="color: #3867d6; text-decoration: none; font-size: 16px; border: 1px solid #3867d6; padding: 8px 16px; border-radius: 4px; display: inline-block; transition: background-color 0.3s, color 0.3s;">
-            Halaman Utama
-        </a>
-    </div>
+    <a href="https://beritajkt48.github.io/info/" class="btn-home">Halaman Utama</a>
 </body>
 </html>
