@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Member JKT48</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .member-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .member-photo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .member-info {
+            text-align: center;
+        }
+        .member-info h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .member-info p {
+            margin: 4px 0;
+            font-size: 0.9em;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .social-links a {
+            padding: 6px 12px;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .twitter { background-color: #1DA1F2; }
+        .instagram { background-color: #C13584; }
+        .tiktok { background-color: #010101; }
+        .showroom { background-color: #ff4d00; } /* Warna khas Showroom */
+        .idnlive { background-color: #ff0000; }  /* Warna khas IDN Live */
+        
+        /* Tombol Pilih Generasi */
+        .choose-generation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .choose-generation a {
+            color: #3867d6;
+            text-decoration: none;
+            font-size: 1em;
+            border: 1px solid #3867d6;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .choose-generation a:hover {
+            background-color: #3867d6;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Member JKT48 - Generasi 13</h1>
+
+    <!-- Member: Astrella Virgiananda -->
+    <div class="member-container">
+        <div class="member-photo">
+            <img src="virgi.jpg" alt="Foto Astrella Virgiananda">
+        </div>
+        <div class="member-info">
+            <h2>Astrella Virgiananda</h2>
+            <p>Tanggal Lahir: 6 Agustus 2010</p>
+            <p>Golongan Darah: AB</p>
+            <p>Horoskop: Leo</p>
+            <p>Tinggi Badan: 162cm</p>
+            <p>Nama Panggilan: Virgi</p>
+            <div class="social-links">
+                <a href="https://x.com/A_VirgiJKT48" target="_blank" class="twitter">Twitter</a>
+                <a href="https://instagram.com/virgi.jkt48" target="_blank" class="instagram">Instagram</a>
+                <a href="https://www.tiktok.com/@jkt48.virgi" target="_blank" class="tiktok">TikTok</a>
+                <a href="https://www.showroom-live.com/r/JKT48_Virgi" target="_blank" class="showroom">SHOWROOM</a>
+                <a href="https://idn.onelink.me/VKUf/VirgiJKT48" target="_blank" class="idnlive">IDN Live</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Member lainnya -->
+    <script>
+        const members = [
+            {
+                name: "Aulia Riza",
+                img: "auwia.jpg",
+                birthdate: "14 Juli 2007",
+                bloodType: "O",
+                horoscope: "Cancer",
+                height: "166cm",
+                nickname: "Auwia",
+                twitter: "https://twitter.com/Auwia_JKT48",
+                instagram: "https://instagram.com/auwia.jkt48",
+                tiktok: "https://www.tiktok.com/@jkt48.auwia",
+                showroom: "https://www.showroom-live.com/r/JKT48_Auwia",
+                idnlive: "https://idn.onelink.me/VKUf/AuwiaJKT48"
+            },
+            {
+                name: "Bong Aprilli",
+                img: "rilly.jpg",
+                birthdate: "1 April 2010",
+                bloodType: "A",
+                horoscope: "Aries",
+                height: "164cm",
+                nickname: "Rilly",
+                twitter: "https://twitter.com/Rilly_JKT48",
+                instagram: "https://instagram.com/rilly.jkt48_",
+                tiktok: "https://www.tiktok.com/@jkt48.rilly",
+                showroom: "https://www.showroom-live.com/r/JKT48_Rilly",
+                idnlive: "https://idn.onelink.me/VKUf/RillyJKT48"
+            }
+        ];
+
+        function generateMemberHTML(member) {
+            return `
+                <div class="member-container">
+                    <div class="member-photo">
+                        <img src="${member.img}" alt="Foto ${member.name}">
+                    </div>
+                    <div class="member-info">
+                        <h2>${member.name}</h2>
+                        <p>Tanggal Lahir: ${member.birthdate}</p>
+                        <p>Golongan Darah: ${member.bloodType}</p>
+                        <p>Horoskop: ${member.horoscope}</p>
+                        <p>Tinggi Badan: ${member.height}</p>
+                        <p>Nama Panggilan: ${member.nickname}</p>
+                        <div class="social-links">
+                            <a href="${member.twitter}" target="_blank" class="twitter">Twitter</a>
+                            <a href="${member.instagram}" target="_blank" class="instagram">Instagram</a>
+                            <a href="${member.tiktok}" target="_blank" class="tiktok">TikTok</a>
+                            <a href="${member.showroom}" target="_blank" class="showroom">SHOWROOM</a>
+                            <a href="${member.idnlive}" target="_blank" class="idnlive">IDN Live</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.body.innerHTML += members.map(generateMemberHTML).join("");
+    </script>
+
+    <div class="choose-generation">
+        <a href="https://beritajkt48.github.io/member/">Pilih Generasi</a>
+    </div>
+
+</body>
+</html>
