@@ -9,20 +9,41 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a;
+            background-color: #05001a;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
 
-        /* Efek bintang */
-        .stars {
+        /* Lapisan bintang */
+        .stars, .stars2, .stars3 {
             position: fixed;
             width: 100%;
             height: 100%;
-            background: url('https://i.imgur.com/1D3Xc7p.png') repeat top center;
+            top: 0;
+            left: 0;
+        }
+
+        /* Efek bintang kecil */
+        .stars {
+            background: url('https://i.imgur.com/Z7k03vI.png') repeat;
             animation: move-stars 50s linear infinite;
+        }
+
+        /* Efek bintang sedang */
+        .stars2 {
+            background: url('https://i.imgur.com/LT0R5g9.png') repeat;
+            animation: move-stars 100s linear infinite;
+            opacity: 0.6;
+        }
+
+        /* Efek bintang besar */
+        .stars3 {
+            background: url('https://i.imgur.com/q8w4XG1.png') repeat;
+            animation: move-stars 150s linear infinite;
+            opacity: 0.3;
         }
 
         @keyframes move-stars {
@@ -34,10 +55,14 @@
             margin-top: 50px;
             font-size: 28px;
             text-transform: uppercase;
+            z-index: 10;
+            position: relative;
         }
 
         .container {
             margin-top: 30px;
+            z-index: 10;
+            position: relative;
         }
 
         /* Gaya tombol */
@@ -71,6 +96,8 @@
 
     <!-- Efek Bintang -->
     <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
 
     <h1>Daftar Saluran Whatsapp Generasi JKT48</h1>
 
