@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-        /* Background gelap dengan bintang */
+        /* Background gelap */
         body {
             background-color: #05001a;
             color: white;
@@ -22,38 +22,36 @@
             position: relative;
         }
 
-        /* Efek bintang menggunakan CSS */
-        .stars, .stars2, .stars3 {
-            position: absolute;
+        /* Efek bintang jatuh */
+        .stars {
+            position: fixed;
             width: 100%;
             height: 100%;
-            background: transparent;
-            z-index: -1;
+            top: 0;
+            left: 0;
+            pointer-events: none;
         }
 
-        .stars {
-            background: radial-gradient(white, rgba(255, 255, 255, 0) 10%);
-            background-size: 3px 3px;
-            animation: move-stars 50s linear infinite;
+        /* Membuat banyak bintang */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            animation: fall linear infinite;
         }
 
-        .stars2 {
-            background: radial-gradient(white, rgba(255, 255, 255, 0) 10%);
-            background-size: 2px 2px;
-            animation: move-stars 80s linear infinite reverse;
-            opacity: 0.6;
-        }
-
-        .stars3 {
-            background: radial-gradient(white, rgba(255, 255, 255, 0) 10%);
-            background-size: 1px 1px;
-            animation: move-stars 120s linear infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes move-stars {
-            from {transform: translateY(0);}
-            to {transform: translateY(-1000px);}
+        /* Animasi bintang jatuh */
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
         }
 
         /* Judul */
@@ -114,15 +112,12 @@
         .button:hover::before {
             transform: rotate(360deg);
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Efek Bintang -->
+    <!-- Efek Bintang Jatuh -->
     <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
 
     <h1>Daftar Saluran Whatsapp Generasi JKT48</h1>
 
@@ -137,6 +132,31 @@
         <a href="https://whatsapp.com/channel/0029VbAlkkGGk1FltZ518V1Y" class="button">Generasi 12</a>
         <a href="https://whatsapp.com/channel/0029Vb65gy90rGiNZFeMD50l" class="button">Generasi 13</a>
     </div>
+
+    <script>
+        // Membuat bintang jatuh secara random
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            document.querySelector(".stars").appendChild(star);
+
+            // Menentukan posisi random
+            const size = Math.random() * 3 + 1;
+            const duration = Math.random() * 2 + 2;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${duration}s`;
+
+            // Menghapus bintang setelah jatuh
+            setTimeout(() => {
+                star.remove();
+            }, duration * 1000);
+        }
+
+        // Membuat banyak bintang secara berkala
+        setInterval(createStar, 100);
+    </script>
 
 </body>
 </html>
