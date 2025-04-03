@@ -25,7 +25,6 @@
             text-align: center;
             padding: 20px;
             position: relative;
-            overflow: hidden;
         }
 
         @keyframes gradientMove {
@@ -76,6 +75,13 @@
             font-weight: 600;
         }
 
+        /* Container Scrollable */
+        .channel-container {
+            max-height: 400px; /* Tinggi maksimal sebelum muncul scrollbar */
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
         .channel {
             display: flex;
             align-items: center;
@@ -112,7 +118,6 @@
         .channel a:hover {
             background: #5a47d0;
         }
-
     </style>
 </head>
 <body>
